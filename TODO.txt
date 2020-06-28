@@ -1,0 +1,8 @@
+enable file sharing
+Docker -> settings -> Resources -> File Sharing -> C:\
+
+Makefile
+composer install
+php bin/console doctrine:migrations:migrate
+./bin/composer install
+
