@@ -13,6 +13,8 @@ This repository with application and services backend logic.
 
 open [admin.onlinetraininghub.local](https://admin.onlinetraininghub.local)
 
+3. Start development environment by running `docker-compose up --build --force-recreate -d`
+
 
 
 ## API Requests
