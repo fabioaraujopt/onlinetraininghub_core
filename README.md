@@ -12,7 +12,7 @@ This repository with application and services backend logic.
 ⋅⋅* Open `hosts` file and replace line with `127.0.0.1` with `127.0.0.1  admin.onlinetraininghub.local  api.onlinetraininghub.local`
 
 open [admin.onlinetraininghub.local](https://admin.onlinetraininghub.local)
-
+3. [WINDOWS] Start development environment by running `./start-docker`
 3. [MAC] Start development environment by running `docker-compose up --build --force-recreate --remove-orphans -d && docker-compose up -d && ./bin/composer install && bin/console doctrine:migrations:migrate  && ./bin/console cache:clear`
 
 
