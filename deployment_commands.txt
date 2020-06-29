@@ -1,0 +1,6 @@
+php bin/console cache:warmup
+php doctrine:migrations:migrate
+
+(in future)
+cloudfront cache
+api gateway cache

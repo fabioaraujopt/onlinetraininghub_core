@@ -4,9 +4,9 @@ services:
     nginx:
         build:
             context: .
-            dockerfile: Dockerfile-nginx
+            dockerfile: ./dev-container/Dockerfile-nginx
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - .:/var/www/symfony/
         ports:
             - 8001:80
         networks:
@@ -14,12 +14,13 @@ services:
     php:
         build:
             context: .
-            dockerfile: Dockerfile-php
+            dockerfile: ./dev-container/Dockerfile-php
         environment:
             APP_ENV: dev
-            DATABASE_URL: mysql://root:root@mysql:3306/symfony_db?serverVersion=5.7
+            DATABASE_URL: mysql://root:root@mysql:3306/symfony_db
+            
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - .:/var/www/symfony/
         networks:
             - symfony
         depends_on:
@@ -29,10 +30,12 @@ services:
         command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
         environment:
             MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
         ports:
             - 3306:3306
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./dev-container/mysql:/var/lib/mysql
         networks:
             - symfony
 networks:
