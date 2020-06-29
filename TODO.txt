@@ -6,3 +6,6 @@ composer install
 php bin/console doctrine:migrations:migrate
 ./bin/composer install
 
+
+To Launch Docker
+docker-compose up
