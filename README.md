@@ -5,6 +5,7 @@ This repository with application and services backend logic.
 
 ### Running the Local Environment
 1. Install docker - https://docs.docker.com/install/
+2. Go to docker settings -> resources -> file sharing -> add C:\\  (or Mac equivalent)
 2. [MAC] Go to Terminal/CommandPrompt and do the following:
 ⋅⋅* `sudo vim /etc/hosts` and paste this at the end of the file: `127.0.0.1  admin.onlinetraininghub.local  api.onlinetraininghub.local` 
 2. [WINDOWS] Go to folder `C:\Windows\System32\drivers\etc`
