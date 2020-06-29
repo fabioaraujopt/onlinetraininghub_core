@@ -13,7 +13,7 @@ This repository with application and services backend logic.
 
 open [admin.onlinetraininghub.local](https://admin.onlinetraininghub.local)
 
-3. Start development environment by running `docker-compose up --build --force-recreate -d`
+3. [MAC] Start development environment by running `docker-compose up --build --force-recreate --remove-orphans -d && docker-compose up -d && ./bin/composer install && bin/console doctrine:migrations:migrate  && ./bin/console cache:clear`
 
 
 
