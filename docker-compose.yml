@@ -4,7 +4,7 @@ services:
     nginx:
         build:
             context: .
-            dockerfile: ./dev-container/Dockerfile-nginx
+            dockerfile: ./.docker/Dockerfile-nginx
         volumes:
             - .:/var/www/symfony/
         ports:
@@ -14,7 +14,7 @@ services:
     php:
         build:
             context: .
-            dockerfile: ./dev-container/Dockerfile-php
+            dockerfile: ./.docker/Dockerfile-php
         environment:
             APP_ENV: dev
             DATABASE_URL: mysql://root:root@mysql:3306/symfony_db
@@ -35,7 +35,7 @@ services:
         ports:
             - 3306:3306
         volumes:
-            - ./dev-container/mysql:/var/lib/mysql
+            - ./.docker/mysql:/var/lib/mysql
         networks:
             - symfony
 networks:

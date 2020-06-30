@@ -14,7 +14,7 @@ jobs:
     
     - name: Remove dev files
       run: | 
-        rm -rf dev-container 
+        rm -rf .docker 
         rm -rf tests 
         rm -f .env
         rm -f .env.test
