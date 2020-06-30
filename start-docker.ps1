@@ -1,3 +1,4 @@
+'y'|net stop http
 docker-compose stop
 docker-compose up --build --force-recreate --remove-orphans -d 
 docker-compose up -d 
