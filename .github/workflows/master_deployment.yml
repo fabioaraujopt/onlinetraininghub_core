@@ -23,11 +23,6 @@ jobs:
         rm -f start-docker.ps1
         rm -f stop-docker.ps1
         
-    - name: Install Composer dependencies and warm app cache
-      run: |
-        composer install --no-dev --optimize-autoloader
-        APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
-        
     - name: Set Environment Variables
       run: |
         true > .env
@@ -35,7 +30,11 @@ jobs:
         echo "ENV=PROD" >> .env
         echo "APP_SECRET={{ secrets.APP_SECRET }}" >> .env
         echo "DATABASE_URL=${{ secrets.DATABASEURL }}" >> .env
-      
+        
+    - name: Install Composer dependencies and warm app cache
+      run: |
+        composer install --no-dev --optimize-autoloader
+        APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
 
     - name: Generate deployment package
       run: zip deploy.zip .
