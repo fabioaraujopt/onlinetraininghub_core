@@ -11,6 +11,8 @@ This repository with application and services backend logic.
 
 open [admin.onlinetraininghub.local](https://admin.onlinetraininghub.local)
 
+3. [WINDOWS] Run `net stop http` and locate services in run ->`services.msc` disable them and place as manual.
+3. [WINDOWS] Add line `127.0.0.1 api.evolvetraininghub.local` to `C:\Windows\System32\drivers\etc\hosts` (carefully do not save as .txt but instead save without extension).
 3. [WINDOWS] Start development environment by running `./start-docker`
 3. [MAC] Start development environment by running `docker-compose up --build --force-recreate --remove-orphans -d && docker-compose up -d && ./bin/composer install && bin/console doctrine:migrations:migrate  && ./bin/console cache:clear`
 
