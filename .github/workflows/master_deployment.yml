@@ -28,7 +28,7 @@ jobs:
         true > .env
         echo "APP_ENV=prod" >> .env
         echo "ENV=PROD" >> .env
-        echo "APP_SECRET={{ secrets.APP_SECRET }}" >> .env
+        echo "APP_SECRET=${{ secrets.APP_SECRET }}" >> .env
         echo "DATABASE_URL=${{ secrets.DATABASEURL }}" >> .env
         
     - name: Install Composer dependencies and warm app cache
