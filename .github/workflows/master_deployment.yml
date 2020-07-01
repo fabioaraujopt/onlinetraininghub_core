@@ -29,7 +29,7 @@ jobs:
         echo "APP_ENV=prod" >> .env
         echo "ENV=PROD" >> .env
         echo "APP_SECRET=${{ secrets.APP_SECRET }}" >> .env
-        echo "DATABASE_URL=${{ secrets.DATABASEURL }}" >> .env
+        echo "DATABASE_URL=mysql://admin:5Z$5OWx33YgX@online-training-hub.c65jjxieupzo.eu-central-1.rds.amazonaws.com:3306" >> .env
         
     - name: Install Composer dependencies and warm app cache
       run: |
