@@ -50,6 +50,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: OnlineTrainingHub
         environment_name: Onlinetraininghub-env
-        version_label: $BUILD_NUMBER
+        version_label: "$BUILD_NUMBER"
         region: eu-central-1
         deployment_package: deploy.zip
