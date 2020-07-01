@@ -37,7 +37,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity=Payment::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=PaymentRequest::class, mappedBy="user")
      */
     private $plan;
 
@@ -125,14 +125,14 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Payment[]
+     * @return Collection|PaymentRequest[]
      */
     public function getPlan(): Collection
     {
         return $this->plan;
     }
 
-    public function addPlan(Payment $plan): self
+    public function addPlan(PaymentRequest $plan): self
     {
         if (!$this->plan->contains($plan)) {
             $this->plan[] = $plan;
@@ -142,7 +142,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function removePlan(Payment $plan): self
+    public function removePlan(PaymentRequest $plan): self
     {
         if ($this->plan->contains($plan)) {
             $this->plan->removeElement($plan);

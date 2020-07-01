@@ -40,7 +40,7 @@ class PaymentPlan
     private $active;
 
     /**
-     * @ORM\OneToMany(targetEntity=Payment::class, mappedBy="plan")
+     * @ORM\OneToMany(targetEntity=PaymentRequest::class, mappedBy="plan")
      */
     private $payments;
 
@@ -103,14 +103,14 @@ class PaymentPlan
     }
 
     /**
-     * @return Collection|Payment[]
+     * @return Collection|PaymentPlan[]
      */
     public function getPayments(): Collection
     {
         return $this->payments;
     }
 
-    public function addPayment(Payment $payment): self
+    public function addPayment(PaymentPlan $payment): self
     {
         if (!$this->payments->contains($payment)) {
             $this->payments[] = $payment;
@@ -120,7 +120,7 @@ class PaymentPlan
         return $this;
     }
 
-    public function removePayment(Payment $payment): self
+    public function removePayment(PaymentPlan $payment): self
     {
         if ($this->payments->contains($payment)) {
             $this->payments->removeElement($payment);
