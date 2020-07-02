@@ -16,5 +16,5 @@
 ###< symfony/phpunit-bridge ###
 
 ###> development docker  ###
-.docker
+
 ###<  development docker ###
